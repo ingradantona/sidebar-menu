@@ -7,12 +7,15 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-weight: normal;
-    font-family: "Verdana";
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.1rem, 0.8rem + 0.6vh, 1rem);
+    color: ${({ theme }) => theme.colors.typography.basic};
   }
 
 
   body {
-    background: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background.primary};
     width: 100%;
     height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -35,6 +38,8 @@ export const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
     
     &:disabled {
     cursor: not-allowed;
